@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="secondaryClickHandler"
+            type="com.example.learningmanagmentmvvm.MainActivity.MainActivityClickHandler" />
+        
+        <variable
+            name="secondarySpinnerAdapter"
+            type="android.widget.ArrayAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:shownIn="@layout/activity_main"
+        android:id="@+id/relativeLayout">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="0dp"
+            android:adapter="@{secondarySpinnerAdapter}"
+            android:onItemSelected="@{secondaryClickHandler::onSelectedSpinnerItem}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="NotSibling,Suspicious0dp" />
+
+    </RelativeLayout>
+</layout>
